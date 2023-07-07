@@ -8,18 +8,37 @@ body {
 
 .header {
     text-align: center;
-    color: darkgreen;
-    background-color: lightgreen;
+    color: lightgreen;
+    background-color: darkgreen;
     padding: 2em 0em;
 }
 
 .search {
     background-color: darkslategrey;
-    padding: 1em 0em;
+    padding: 0.3em;
 }
 
 .search form {
-    display: inline;
+    display: grid;
+    grid-template-columns: 78% 20%;
+    height: 2em;
+    column-gap: 2%;
+}
+
+#searchbar {
+    font-size: 1.2rem;
+}
+
+#searchbutton {
+    border: 0.1em solid darkslategrey;
+    background-color: whitesmoke;
+    color: darkslategrey;
+}
+
+#searchbutton:hover {
+    border: 0.1em solid whitesmoke;
+    background-color: darkgreen;
+    color: whitesmoke;
 }
 
 .main {
@@ -28,6 +47,7 @@ body {
 }
 
 .main-text {
+    padding-top: 5.5em;
     text-align: center;
     color: whitesmoke;
 }
@@ -51,7 +71,8 @@ body {
 }
 
 .other-each ul {
-    padding-top: 4em;
+    background-color: whitesmoke;
+    padding: 1em 1em;
     font-size: 1.2rem;
 }
 
@@ -64,4 +85,17 @@ body {
 
 .footer p span {
     color: darkgreen;
+}
+
+@media only screen and (min-width: 720px) {
+    /*For tablets*/
+    .other {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    
+    .other-each img {
+        width: 13rem;
+        height: 18rem;
+    }
 }
