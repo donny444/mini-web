@@ -58,29 +58,59 @@ body {
     background-color: lightgreen;
 }
 
+.other-each:first-child {
+    margin-top: 2em;
+}
+
+.other-each:last-child {
+    margin-bottom: 2em;
+}
+
 .other-each {
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: space-evenly;
-    margin: 2em 0;
+    justify-content: space-around;
+    margin: 0.5em 1em;
 }
 
 .other-each img {
-    width: 12rem;
-    height: 17rem;
+    width: 60%;
 }
 
 .other-each ul {
-    background-color: whitesmoke;
-    padding: 1em 1em;
+    color: darkslategrey;
+    padding: 1em;
     font-size: 1.2rem;
+}
+
+.navbar {
+    background-color: darkslategrey;
+}
+
+.navbar nav {
+    display: block;
+}
+
+.navbar li {
+    list-style: none;
+    text-align: center;
+    padding: 0.4em 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+.navbar a:hover {
+    color: darkgreen;
 }
 
 .footer {
     text-align: center;
     padding: 1em 0;
-    color: whitesmoke;
-    background-color: darkslategrey;
+    color: darkslategrey;
+    background-color: whitesmoke;
 }
 
 .footer p span {
@@ -89,6 +119,10 @@ body {
 
 @media only screen and (min-width: 720px) {
     /*For tablets*/
+    .search form {
+        text-align: center;
+    }
+
     .other {
         display: grid;
         grid-template-columns: 50% 50%;
