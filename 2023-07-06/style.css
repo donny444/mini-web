@@ -14,6 +14,8 @@ body {
 }
 
 .search {
+    position: sticky;
+    top: 0;
     background-color: darkslategrey;
     padding: 0.3em;
 }
@@ -47,8 +49,10 @@ body {
 }
 
 .main-text {
+    width: 75%;
     padding-top: 5.5em;
     text-align: center;
+    margin: 0 auto;
     color: whitesmoke;
 }
 
@@ -75,6 +79,7 @@ body {
 
 .other-each img {
     width: 60%;
+    min-width: 120px;
 }
 
 .other-each ul {
