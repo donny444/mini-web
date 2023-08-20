@@ -5,8 +5,13 @@ const buttonOne = document.getElementById("btn-1");
 const buttonTwo = document.getElementById("btn-2");
 const buttonThree = document.getElementById("btn-3");
 const buttonFour = document.getElementById("btn-4");
+const colorOne = buttonOne.innerHTML;
+const colorTwo = buttonTwo.innerHTML;
+const colorThree = buttonThree.innerHTML;
+const colorFour = buttonFour.innerHTML;
 const buttons = [buttonOne, buttonTwo, buttonThree, buttonFour];
 const languages = [jsButton, phpButton];
+const colors = [colorOne, colorTwo, colorThree, colorFour];
 
 // Algorithm 1
 /*
@@ -63,21 +68,19 @@ buttonFour.addEventListener("click", () => {
 function handleLanguages(lang) {
     switch(lang) {
         case jsButton: {
-            let colors = ["Orange", "Purple", "Red", "Grey"];
+            var langColors = ["Orange", "Purple", "Red", "Grey"];
             showImage.setAttribute("src", "./images/js_orange.jpg");
-            for (let i of colors) {
-                buttons[i].innerHTML = colors[i];
-            }
             break;
         }
         case phpButton: {
-            let colors = ["Green", "Brown", "Pink", "Blue"];
+            var langColors = ["Green", "Brown", "Pink", "Blue"];
             showImage.setAttribute("src", "./images/php_green.jpg");
-            for (let i of colors) {
-                buttons[i].innerHTML = colors[i];
-            }
             break;
         }
+    }
+    for(let i in buttons) {
+        colors[i] = langColors[i];
+        buttons[i].innerHTML = colors[i];
     }
 }
 
@@ -85,55 +88,43 @@ function handleColors(num, color) {
     switch(num) {
         case buttonOne: {
             switch(color) {
-                case "Orange": showImage.setAttribute("src", "./images/js_orange.jpg"); break;
-                case "Green": showImage.setAttribute("src", "./images/php_green.jpg"); break;
+                case "Orange": showImage.setAttribute("src", `./images/js_${colors[0].toLowerCase()}.jpg`); break;
+                case "Green": showImage.setAttribute("src", `./images/php_${colors[0].toLowerCase()}.jpg`); break;
             }
             break;
         }
         case buttonTwo: {
             switch(color) {
-                case "Purple": showImage.setAttribute("src", "./images/js_purple.jpg"); break;
-                case "Brown": showImage.setAttribute("src", "./images/php_brown.jpg"); break;
+                case "Purple": showImage.setAttribute("src", `./images/js_${colors[1].toLowerCase()}.jpg`); break;
+                case "Brown": showImage.setAttribute("src", `./images/php_${colors[1].toLowerCase()}.jpg`); break;
             }
             break;
         }
         case buttonThree: {
             switch(color) {
-                case "Red": showImage.setAttribute("src", "./images/js_red.jpg"); break;
-                case "Pink": showImage.setAttribute("src", "./images/php_pink.jpg"); break;
+                case "Red": showImage.setAttribute("src", `./images/js_${colors[2].toLowerCase()}.jpg`); break;
+                case "Pink": showImage.setAttribute("src", `./images/php_${colors[2].toLowerCase()}.jpg`); break;
             }
             break;
         }
         case buttonFour: {
             switch(color) {
-                case "Grey": showImage.setAttribute("src", "./images/js_grey.jpg"); break;
-                case "Blue": showImage.setAttribute("src", "./images/php_blue.jpg"); break;
+                case "Grey": showImage.setAttribute("src", `./images/js_${colors[3].toLowerCase()}.jpg`); break;
+                case "Blue": showImage.setAttribute("src", `./images/php_${colors[3].toLowerCase()}.jpg`); break;
             }
             break;
         }
     }
 }
 
-jsButton.addEventListener("click", () => {
-    handleLanguages(jsButton);
-})
+for(let i in languages) {
+    languages[i].addEventListener("click", () => {
+        handleLanguages(languages[i]);
+    })
+}
 
-phpButton.addEventListener("click", () => {
-    handleLanguages(phpButton);
-})
-
-buttonOne.addEventListener("click", () => {
-    handleColors(buttonOne, buttonOne.innerHTML);
-})
-
-buttonTwo.addEventListener("click", () => {
-    handleColors(buttonTwo, buttonTwo.innerHTML);
-})
-
-buttonThree.addEventListener("click", () => {
-    handleColors(buttonThree, buttonThree.innerHTML);
-})
-
-buttonFour.addEventListener("click", () => {
-    handleColors(buttonFour, buttonFour.innerHTML);
-})
+for(let i in buttons) {
+    buttons[i].addEventListener("click", () => {
+        handleColors(buttons[i], colors[i]);
+    })
+}

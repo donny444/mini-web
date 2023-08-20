@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: brown;
+    border: 0.8rem solid red;
+    text-align: center;
+}
+
+.container {
+    background-color: red;
+    border: 0.8rem solid brown;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.colors-button {
+    margin-top: 3em;
+}
+
+#image {
+    width: 30%;
+    margin: 1.6em;
+}
