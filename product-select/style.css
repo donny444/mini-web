@@ -3,18 +3,23 @@
 }
 
 body {
+    background-color: darkblue;
     margin: 0;
 }
 
 .header {
-    background-color: brown;
-    border: 0.8rem solid red;
+    background-color: lightgrey;
+    border: 0.1em solid lightgrey;
     text-align: center;
 }
 
 .container {
-    background-color: red;
-    border: 0.8rem solid brown;
+    background-color: lightblue;
+    border: 0.4em solid red;
+}
+
+.languages-bar {
+    margin: 1.3em;
 }
 
 .sub-container {
@@ -22,11 +27,45 @@ body {
     flex-direction: row;
 }
 
-.colors-button {
-    margin-top: 3em;
+.color-selector {
+    margin-top: 1.6em;
 }
 
-#image {
+.colors-button {
+    margin-top: 0.8em;
+}
+
+.footer {
+    background-color: lightgrey;
+    border: 0.1em solid lightgrey;
+    bottom: 0;
+    text-align: center;
+}
+
+#btn-js {
+    background-color: #F0DB4F;
+    color: #323330;
+}
+#btn-php {
+    background-color: #787CB5;
+    color: #000000;
+}
+
+img {
     width: 30%;
-    margin: 1.6em;
+    margin: 1.3em;
+}
+
+label {
+    font-size: 1.4rem;
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.3em;
+    margin-right: 0.3em;
+}
+
+span {
+    color: purple;
 }
