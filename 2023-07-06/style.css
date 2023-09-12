@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -17,6 +17,7 @@ body {
 
 .home {
     display: inline-block;
+    color: whitesmoke;
 }
 
 .search {
@@ -30,7 +31,9 @@ body {
     display: grid;
     grid-template-columns: 78% 20%;
     height: 2em;
+    max-width: 960px;
     column-gap: 2%;
+    margin: 0 auto;
 }
 
 #searchbar {
@@ -45,7 +48,7 @@ body {
 
 #searchbutton:hover {
     border: 0.1em solid whitesmoke;
-    background-color: darkgreen;
+    background-color: limegreen;
     color: whitesmoke;
 }
 
@@ -102,6 +105,12 @@ body {
     display: block;
 }
 
+.navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding-inline-start: 0;
+    margin-block: 0;
+}
 .navbar li {
     list-style: none;
     text-align: center;
@@ -114,12 +123,14 @@ body {
     font-size: 1.2rem;
 }
 .navbar a:hover {
-    color: darkgreen;
+    color: limegreen;
 }
 
 .footer {
-    text-align: center;
-    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: em;
     color: darkslategrey;
     background-color: whitesmoke;
 }
@@ -147,8 +158,40 @@ body {
 }
 
 .form {
-    display: inline-block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 3em 0;
+}
+
+.form form {
+    width: 60%;
+    max-width: 480px;
+    background-color: whitesmoke;
+    padding: 2em;
+    font-size: 1.2rem;
+    border: 2px solid green
+}
+.form input {
+    margin-bottom: 3em;
+    font-size: 1rem;
+}
+
+input:required {
+    border: 2px solid green;
+    width: 80%;
+    height: 2.5em;
+}
+
+input[value="Submit"] {
+    width: 30%;
+    height: 3em;
+    background-color: limegreen;
+    color: whitesmoke;
+    border-width: 0;
+}
+
+input[value="Submit"]:hover {
+    border: 2px solid darkslategrey;
 }
 
 @media only screen and (max-width: 960px) {
@@ -184,5 +227,23 @@ body {
         align-content: space-evenly;
     }
 
+    .navbar ul {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
 
+    .navbar li {
+        padding: 0.3em 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar ul {
+        display:block;
+        text-align: center;
+    }
+    
+    .navbar li {
+        padding: 0.2em 0;
+    }
 }
