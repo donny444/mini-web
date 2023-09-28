@@ -18,6 +18,20 @@ body {
     border: 0.4em solid red;
 }
 
+.main-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn-category {
+    background-color: lightgrey;
+    border: 0.1em solid darkblue;
+}
+.btn-category a {
+    text-decoration: none;
+}
+
 .languages-bar {
     margin: 1.3em;
 }
@@ -68,4 +82,10 @@ button {
 
 span {
     color: purple;
+}
+
+#end {
+    text-align: center;
+    color: lightblue;
+    font-size: 1.2rem;
 }
