@@ -69,8 +69,8 @@ body {
 }
 
 .other {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
     background-color: lightgreen;
     margin: 2em 0;
 }
@@ -84,11 +84,10 @@ body {
     background-color: whitesmoke;
     display: grid;
     grid-template-columns: 30% 30% 40%;
-    justify-content: space-between;
 }
 
 .other-each img {
-    width: 60%;
+    width: 90%;
 }
 
 .navbar {
@@ -212,13 +211,16 @@ input[value="Submit"]:hover {
         text-align: center;
     }
 
+    .other {
+        grid-template-columns: 100%;
+    }
     .other-each {
         width: 80%;
         grid-template-columns: 50% 50%;
     }
     
     .other-each img {
-        width: 70%;
+        width: 80%;
     }
     
     .all-plants {
@@ -247,13 +249,16 @@ input[value="Submit"]:hover {
 
 @media only screen and (max-width: 480px) {
     /*For Mobiles*/
+    .other {
+        grid-template-columns: 100%;
+    }
     .other-each {
         width: 90%;
         grid-template-columns: 100%;
     }
     
     .other-each img {
-        width: 80%;
+        width: 70%;
     }
     .navbar ul {
         display:block;
