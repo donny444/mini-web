@@ -15,37 +15,83 @@ header {
   background-color: hotpink;
 }
 
-section {
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("../assets/images/sample.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 1em;
+  height: 500px;
+}
+main button {
+  font-size: larger;
+  font-weight: bolder;
+  padding: 0.4em 0.8em;
+  background-color: hotpink;
+  border: 0;
+  border-radius: 4px;
+}
+main button:hover {
+  background-color: whitesmoke;
+}
+
+section.colors {
   display: grid;
   grid-template-columns: auto;
   gap: 1em;
   width: 90%;
-  margin: 0 auto;
+  margin: 2em auto;
 }
-section div {
+section.colors article {
   background-color: white;
   padding: 1em;
   border-radius: 4px;
 }
+section.colors article img {
+  width: 100%;
+}
 
-details {
-  text-align: center;
-  background-color: hotpink;
-}
-details div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-details div div {
+section.benefits {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: hotpink;
+  padding: 1em 0;
+}
+section.benefits div {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 85%;
+  margin: 1em auto;
+}
+form h2 {
   text-align: center;
 }
-details div div img {
-  width: 70%;
-  margin: 0 auto;
+form input {
+  height: 2em;
+  border: 0;
+  border-radius: 4px;
+}
+form input:last-child {
+  height: 3em;
+  font-weight: bolder;
+  background-color: hotpink;
+}
+form input:last-child:hover {
+  background-color: whitesmoke;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
