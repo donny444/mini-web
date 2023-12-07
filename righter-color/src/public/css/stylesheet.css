@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: pink;
+  background-color: #ffffff;
   margin: 0;
 }
 
@@ -12,7 +12,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hotpink;
+  height: 65px;
+  background-color: #5271ff;
+  border-bottom: 5px solid #dbdbdb;
+}
+header img {
+  height: 100%;
 }
 
 main {
@@ -21,10 +26,11 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("../assets/images/sample.jpg");
+  background-image: url("../assets/images/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+  color: #ffffff;
   padding: 1em;
   height: 500px;
 }
@@ -32,12 +38,14 @@ main button {
   font-size: larger;
   font-weight: bolder;
   padding: 0.4em 0.8em;
-  background-color: hotpink;
+  background-color: #5271ff;
+  color: #ffffff;
   border: 0;
   border-radius: 4px;
 }
 main button:hover {
-  background-color: whitesmoke;
+  background-color: #dbdbdb;
+  color: #0a0a0a;
 }
 
 section.colors {
@@ -48,7 +56,7 @@ section.colors {
   margin: 2em auto;
 }
 section.colors article {
-  background-color: white;
+  background-color: #dbdbdb;
   padding: 1em;
   border-radius: 4px;
 }
@@ -61,13 +69,21 @@ section.benefits {
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  background-color: hotpink;
+  background-color: #5271ff;
+  color: #ffffff;
   padding: 1em 0;
 }
 section.benefits div {
   display: grid;
   grid-template-columns: auto;
   gap: 1em;
+}
+section.benefits div figure img {
+  width: 25%;
+}
+section.benefits div figure figcaption {
+  font-size: larger;
+  font-weight: bolder;
 }
 
 form {
@@ -82,16 +98,20 @@ form h2 {
 }
 form input {
   height: 2em;
+  background-color: #dbdbdb;
+  color: #0a0a0a;
   border: 0;
   border-radius: 4px;
 }
 form input:last-child {
   height: 3em;
   font-weight: bolder;
-  background-color: hotpink;
+  background-color: #5271ff;
+  color: #ffffff;
 }
 form input:last-child:hover {
-  background-color: whitesmoke;
+  background-color: #dbdbdb;
+  color: #0a0a0a;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
