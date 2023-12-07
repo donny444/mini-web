@@ -1,6 +1,8 @@
 $font-stack: "Helvetica", sans-serif;
-$primary-color: hotpink;
-$secondary-color: pink;
+$primary-color: #5271ff;
+$secondary-color: #ffffff;
+$third-color: #dbdbdb;
+$black-text: #0a0a0a;
 
 * {
     font-family: $font-stack;
@@ -16,7 +18,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 65px;
     background-color: $primary-color;
+    border-bottom: 5px solid $third-color;
+    
+    img {
+        height: 100%;
+    }
 }
 
 main {
@@ -25,10 +33,11 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url("../assets/images/sample.jpg");
+    background-image: url("../assets/images/hero.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    color: $secondary-color;
     padding: 1em;
     height: 500px;
 
@@ -36,13 +45,15 @@ main {
         font-size: larger;
         font-weight: bolder;
         padding: 0.4em 0.8em;
-        background-color: hotpink;
+        background-color: $primary-color;
+        color: $secondary-color;
         border: 0;
         border-radius: 4px;
     }
 
     button:hover {
-        background-color: whitesmoke;
+        background-color: $third-color;
+        color: $black-text;
     }
 }
 
@@ -54,7 +65,7 @@ section.colors {
     margin: 2em auto;
 
     article {
-        background-color: white;
+        background-color: $third-color;
         padding: 1em;
         border-radius: 4px;
 
@@ -70,12 +81,24 @@ section.benefits {
     justify-content: space-evenly;
     text-align: center;
     background-color: $primary-color;
+    color: $secondary-color;
     padding: 1em 0;
 
     div {
         display: grid;
         grid-template-columns: auto;
         gap: 1em;
+
+        figure {
+            img {
+                width: 25%;
+            }
+
+            figcaption {
+                font-size: larger;
+                font-weight: bolder;
+            }
+        }
     }
 }
 
@@ -92,6 +115,8 @@ form {
 
     input {
         height: 2em;
+        background-color: $third-color;
+        color: $black-text;
         border: 0;
         border-radius: 4px;
     }
@@ -99,10 +124,12 @@ form {
     input:last-child {
         height: 3em;
         font-weight: bolder;
-        background-color: hotpink;
+        background-color: $primary-color;
+        color: $secondary-color;
     }
 
     input:last-child:hover {
-        background-color: whitesmoke;
+        background-color: $third-color;
+        color: $black-text;
     }
 }
