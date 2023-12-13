@@ -6,15 +6,20 @@
     <title>Righter Color</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="public/css/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alata">
 </head>
-<body>
+<body onload="doSlideshow()">
     <header>
         <img src="public/assets/images/logo.jpg" alt="logo">
     </header>
-    <main>
-        <h2>Pick a right Color</h2>
-        <h4>Decide the color that appropiate for your work or communication</h4>
-        <button>Pick Here</button>
+    <main id="hero">
+        <button onclick="plusSlides(-1)">Previous</button>
+        <div>
+            <h2>Pick a right Color</h2>
+            <h4>Decide the color that appropiate for your work or communication</h4>
+            <button><a href="design.html">Learn More</a></button>
+        </div>
+        <button onclick="plusSlides(1)">Next</button>
     </main>
     <section class="colors">
         <article>
@@ -75,5 +80,6 @@
     <footer>
 
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
