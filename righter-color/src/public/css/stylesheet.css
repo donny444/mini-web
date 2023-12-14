@@ -1,10 +1,11 @@
 * {
   font-family: "Alata", sans-serif;
   box-sizing: border-box;
+  color: #0a0a0a;
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   margin: 0;
 }
 
@@ -12,11 +13,16 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 65px;
-  background-color: #5271ff;
-  border-bottom: 5px solid #dbdbdb;
+  height: 50px;
+  background-color: #4264ff;
 }
-header img {
+header a {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+header a img {
+  width: 100%;
   height: 100%;
 }
 
@@ -30,7 +36,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  color: #ffffff;
+  color: #f5f5f5;
   padding: 1em;
   height: 500px;
 }
@@ -38,8 +44,8 @@ main button {
   font-size: larger;
   font-weight: bolder;
   padding: 0.4em 0.8em;
-  background-color: #5271ff;
-  color: #ffffff;
+  background-color: #4264ff;
+  color: #f5f5f5;
   border: 0;
   border-radius: 4px;
 }
@@ -69,8 +75,8 @@ section.benefits {
   flex-direction: column;
   justify-content: space-evenly;
   text-align: center;
-  background-color: #5271ff;
-  color: #ffffff;
+  background-color: #4264ff;
+  color: #f5f5f5;
   padding: 1em 0;
 }
 section.benefits div {
@@ -84,6 +90,26 @@ section.benefits div figure img {
 section.benefits div figure figcaption {
   font-size: larger;
   font-weight: bolder;
+}
+
+section.design {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+section.design article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 300px;
+  padding: 0 5%;
+}
+section.design article img {
+  width: 200px;
+}
+section.design article:nth-child(2n+1) {
+  background-color: #dbdbdb;
 }
 
 form {
@@ -106,8 +132,8 @@ form input {
 form input:last-child {
   height: 3em;
   font-weight: bolder;
-  background-color: #5271ff;
-  color: #ffffff;
+  background-color: #4264ff;
+  color: #f5f5f5;
 }
 form input:last-child:hover {
   background-color: #dbdbdb;
