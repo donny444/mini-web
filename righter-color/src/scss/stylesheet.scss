@@ -56,7 +56,7 @@ main {
     }
 
     div {
-        h2, h4 {
+        h2, h3 {
             color: $secondary-color;
         }
 
@@ -90,6 +90,7 @@ section.colors {
     gap: 1em;
     width: 90%;
     max-width: 320px;
+    padding: 1em 0;
     margin: 2em auto;
 
     article {
@@ -146,7 +147,9 @@ section.design {
         padding: 0 5%;
 
         img {
-            width: 200px;
+            width: 25%;
+            min-width: 100px;
+            max-width: 200px;
         }
     }
 
@@ -161,6 +164,7 @@ form {
     justify-content: space-evenly;
     width: 85%;
     max-width: 500px;
+    padding: 1em 0;
     margin: 1em auto;
 
     h2 {
@@ -185,6 +189,23 @@ form {
     input:last-child:hover {
         background-color: $third-color;
         color: $black-text;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $primary-color;
+
+    p {
+        color: $secondary-color;
+
+        span {
+            color: $third-color;
+        }
     }
 }
 
