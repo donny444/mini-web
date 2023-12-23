@@ -27,30 +27,44 @@ header a img {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   background-image: url("../assets/images/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  color: #f5f5f5;
   padding: 1em;
   height: 500px;
 }
-main button {
+main #previous, main #next {
+  background-color: #0a0a0a;
+  color: #dbdbdb;
+  padding: 0.4em 0.8em;
+  border: 0;
+  border-radius: 4px;
+}
+main div h2, main div h4 {
+  color: #f5f5f5;
+}
+main div button {
   font-size: larger;
   font-weight: bolder;
   padding: 0.4em 0.8em;
   background-color: #4264ff;
-  color: #f5f5f5;
   border: 0;
   border-radius: 4px;
 }
-main button:hover {
+main div button a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+main div button:hover {
   background-color: #dbdbdb;
+}
+main div button:hover a {
   color: #0a0a0a;
 }
 
@@ -72,13 +86,12 @@ section.colors article img {
 }
 
 section.benefits {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   text-align: center;
   background-color: #4264ff;
-  color: #f5f5f5;
   padding: 1em 0;
+}
+section.benefits h2 {
+  color: #f5f5f5;
 }
 section.benefits div {
   display: grid;
@@ -86,11 +99,13 @@ section.benefits div {
   gap: 1em;
 }
 section.benefits div figure img {
-  width: 25%;
+  width: 40%;
+  max-width: 144px;
 }
 section.benefits div figure figcaption {
   font-size: larger;
   font-weight: bolder;
+  color: #f5f5f5;
 }
 
 section.design {
@@ -118,6 +133,7 @@ form {
   flex-direction: column;
   justify-content: space-evenly;
   width: 85%;
+  max-width: 500px;
   margin: 1em auto;
 }
 form h2 {
@@ -139,6 +155,17 @@ form input:last-child {
 form input:last-child:hover {
   background-color: #dbdbdb;
   color: #0a0a0a;
+}
+
+@media (min-width: 640px) {
+  section.benefits div {
+    grid-template-columns: auto auto;
+  }
+}
+@media (min-width: 960px) {
+  section.benefits div {
+    grid-template-columns: auto auto auto auto;
+  }
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
