@@ -127,6 +127,10 @@ section.design article img {
   min-width: 100px;
   max-width: 200px;
 }
+section.design article div {
+  max-width: 720px;
+  padding: 0 1em;
+}
 section.design article:nth-child(2n+1) {
   background-color: #dbdbdb;
 }

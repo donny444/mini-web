@@ -151,6 +151,11 @@ section.design {
             min-width: 100px;
             max-width: 200px;
         }
+
+        div {
+            max-width: 720px;
+            padding: 0 1em;
+        }
     }
 
     article:nth-child(2n+1) {
