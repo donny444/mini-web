@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Policy</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Featured Policy</h1>
+    <div id="policies">
+
+    </div>
+    <script>
+        window.onload = function() {
+            fetch("http://127.0.0.1/questionnaire/view_policy.php")
+                .then(response => response.json())
+                .then(data => {
+                        const policies = document.getElementById("policies");
+
+                    }
+                )
+        }
+    </script>
+</body>
+</html>
