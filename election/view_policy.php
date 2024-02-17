@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "log";
+    $dbname = "election";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -11,7 +11,7 @@
         die("Connection failed: " . $conn -> connect_error);
     }
 
-    $sql = "SELECT name, party, fileName, detail FROM policies";
+    $sql = "SELECT name, party, detail, fileName FROM policies";
     $result = $conn->query($sql);
 
     if(result->num_rows > 0)

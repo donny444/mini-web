@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Policy</title>
+    <title>Election</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
@@ -12,11 +12,11 @@
     </div>
     <script>
         window.onload = function() {
-            fetch("http://127.0.0.1/questionnaire/view_policy.php")
+            fetch("http://127.0.0.1/election/view_policy.php")
                 .then(response => response.json())
                 .then(data => {
                         const policies = document.getElementById("policies");
-
+                        console.log(policies);
                     }
                 )
         }
