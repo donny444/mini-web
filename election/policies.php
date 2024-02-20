@@ -1,4 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Election</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Featured Policy</h1>
+    <?php
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -18,6 +27,10 @@
     {
         while($row = $result->fetch_assoc())
         {
+            if($row['party'] == NULL)
+            {
+                $row['party'] = "หลายพรรค";
+            }
             echo "
                 <div>
                     <h3>{$row['name']}</h3>
@@ -32,4 +45,6 @@
     {
         echo "0 results";
     }
-?>
+    ?>
+</body>
+</html>

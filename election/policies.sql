@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 06:04 AM
+-- Generation Time: Feb 20, 2024 at 05:13 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -18,23 +18,21 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `log`
+-- Database: `election`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `questionnaire`
+-- Table structure for table `policies`
 --
 
-CREATE TABLE `questionnaire` (
+CREATE TABLE `policies` (
   `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
-  `role` varchar(255) NOT NULL,
-  `party` varchar(255) NOT NULL,
-  `opinion` varchar(200) DEFAULT NULL
+  `name` varchar(80) NOT NULL,
+  `party` int(11) NOT NULL,
+  `detail` varchar(200) NOT NULL,
+  `file_name` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -42,20 +40,20 @@ CREATE TABLE `questionnaire` (
 --
 
 --
--- Indexes for table `questionnaire`
+-- Indexes for table `policies`
 --
-ALTER TABLE `questionnaire`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `policies`
+  ADD KEY `party` (`party`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `questionnaire`
+-- Constraints for table `policies`
 --
-ALTER TABLE `questionnaire`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `policies`
+  ADD CONSTRAINT `policies_ibfk_1` FOREIGN KEY (`party`) REFERENCES `parties` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
