@@ -7,7 +7,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>นโยบายโดดเด่น</h1>
+    <h1>พรรคการเมือง</h1>
     <?php
         $servername = "localhost";
         $username = "root";
@@ -21,24 +21,21 @@
             die("Connection failed: " . $conn -> connect_error);
         }
 
-        $sql = "SELECT name, party, detail, file_name FROM policies";
+        $sql = "SELECT name, candidate, file_name FROM parties";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0)
         {
             while($row = $result->fetch_assoc())
             {
-                if($row['party'] == NULL)
-                {
-                    $row['party'] = "หลายพรรค";
-                }
                 echo "
-                    <div class='policy'>
-                        <img class='policy-image' src='assets/{$row['file_name']}' alt='{$row["file_name"]}'>
-                        <h3 class='policy-name'>{$row['name']}</h3>
-                        <b class='policy-party'>{$row['party']}</b>
-                        <p class='policy-detail>{$row['detail']}</p>
-                    </div>
+                    <div class='party'>
+                        <img class='party-image' src='assets/{$row['file_name']}' alt='{$row['file_name']}'>
+                        <div class='party-text'>
+                            <h3 class='party-name'>{$row['name']}</h3>
+                            <p class='party-candidate'>แคนดิเดตนายก: {$row['candidate']}</p>
+                        </div>
+                    <div
                 ";
             }
         }

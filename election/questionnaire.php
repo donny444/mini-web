@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election</title>
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Questionnaire</h1>
+    <h1>แบบสอบถาม</h1>
     <form action="submit_questionnaire.php" method="post">
         <div class="form-field">
             <label for="name">Name</label>
