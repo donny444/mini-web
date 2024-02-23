@@ -9,10 +9,10 @@
 <body>
     <h1 class="header">LuekTang</h1>
     <div class="buttons-group">
-        <button>แบบสอบถาม</button>
-        <button>นโยบาย</button>
-        <button>พรรคการเมือง</button>
-        <button>แคนดิเดตนายก</button>
+        <button class="button"><a href="questionnaire.php">แบบสอบถาม</a></button>
+        <button class="button"><a href="policies.php">นโยบาย</a></button>
+        <button class="button"><a href="parties.php">พรรคการเมือง</a></button>
+        <button class="button"><a href="candidates.php">แคนดิเดตนายก</a></button>
     </div>
 </body>
 </html>
