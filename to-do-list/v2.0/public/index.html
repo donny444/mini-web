@@ -9,11 +9,19 @@
 <body>
     <div class="header">
         <h1>Simple To-Do List Webpage</h1>
-        <form class="task-form">
-            <input class="task-input" type="text" name="name" placeholder="Add some task here" maxlength="30" required>
-            <input class="add-todo" hx-post="/task" hx-target="tasks-list" type="submit" value="Add">
+        <form class="task-form" hx-post="/add" hx-target="#tasks-list" hx-swap="afterbegin">
+            <input class="task-input-name" type="text" name="name" placeholder="Add some task here" maxlength="30" required>
+            <input class="task-input-date" type="date" name="date">
+            <input class="task-input-time" type="time" name="time">
+            <select class="task-input-priority" name="priority" required>
+                <option value="1">P1</option>
+                <option value="2">P2</option>
+                <option value="3">P3</option>
+                <option value="4">P4</option>
+            </select>
+            <input class="add-task" type="submit" value="Add">
         </form>
     </div>
-    <div class="tasks-list"></div>
+    <div id="tasks-list" hx-get="/tasks" hx-trigger="load"></div>
 </body>
 </html>

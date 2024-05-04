@@ -1,40 +1,20 @@
-const mysql = require("mysql");
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
+const connection = require("./database.js");
 const routes = require("./routes.js");
 const port = 5000;
 
-app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-// app.use("/", routes);
+app.use("/public", express.static("public"));
 
-// const connection = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "",
-//     database: "to-do-list"
-// });
+app.use("/", routes);
 
-// connection.connect(function(err) {
-//     if (err) throw err;
-//     console.log("MySQL connected.")
-// })
-
-app.post("/task", async (req, res) => {
-    // const name = req.body.name;
-
-    res.send(`
-        <div class="task">
-            <h3 class="task-name">fuck you</h3>
-            <button class="delete-task" hx-delete="/delete" hx-target="task">ลบ</button>
-        <div>
-    `)
-})
-
-app.delete("/delete", async (req, res) => {
-    res.send(`
-
-    `)
+connection.connect(function(err) {
+    if (err) throw err;
+    console.log("MySQL connected.")
 })
 
 app.listen(port, () => {
