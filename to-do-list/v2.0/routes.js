@@ -15,8 +15,10 @@ app.post("/add", async (req, res) => {
             } else {
                 res.send(`
                     <div class="task" id="${results.insertId}">
-                        <h3 class="task-name">${name}</h3>
-                        <span class="task-date">${date}</span><span class="task-time">${time}</span><span class="task-priority">${priority}</span>
+                        <div>
+                            <h3 class="task-name">${name}</h3>
+                            <span class="task-date">${date}</span><span class="task-time">${time}</span><span class="task-priority">P${priority}</span>
+                        </div>
                         <button class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${results.insertId}}'>ลบ</button>
                     <div>
                 `)
@@ -53,8 +55,10 @@ app.get("/tasks", async (req, res) => {
             } else {
                 var resultsHtml = results.map((task) => `
                     <div class="task" id="${task.id}">
-                        <h3 class="task-name">${task.name}</h3>
-                        <span class="task-date">${task.date}</span><span class="task-time">${task.time}</span><span class="task-priority">${task.priority}</span>
+                        <div>
+                            <h3 class="task-name">${task.name}</h3>
+                            <span class="task-date">${task.date}</span><span class="task-time">${task.time}</span><span class="task-priority">P${task.priority}</span>
+                        </div>
                         <button class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${task.id}}'>ลบ</button>
                     </div>
                 `).join("");
