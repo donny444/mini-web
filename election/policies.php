@@ -32,7 +32,7 @@
             die("Connection failed: " . $conn -> connect_error);
         }
 
-        $sql = "SELECT name, party, detail, file_name FROM policies";
+        $sql = "SELECT policies.name, parties.name AS party, policies.detail, policies.file_name FROM policies LEFT JOIN parties ON policies.party = parties.id";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0)
@@ -45,10 +45,10 @@
                 }
                 echo "
                     <div class='policy'>
-                        <img class='policy-image' src='assets/{$row['file_name']}' alt='{$row["file_name"]}'>
+                        <img class='policy-image' src='assets/policies/{$row['file_name']}' alt='{$row["file_name"]}'>
                         <h3 class='policy-name'>{$row['name']}</h3>
                         <b class='policy-party'>{$row['party']}</b>
-                        <p class='policy-detail>{$row['detail']}</p>
+                        <p class='policy-detail'>{$row['detail']}</p>
                     </div>
                 ";
             }
