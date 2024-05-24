@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2024 at 03:00 PM
+-- Generation Time: May 14, 2024 at 09:16 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -41,7 +41,10 @@ CREATE TABLE `tasks` (
 --
 
 INSERT INTO `tasks` (`id`, `name`, `date`, `time`, `priority`, `created_at`) VALUES
-(13, 'hello', '2024-05-08', '21:00:00', 1, '2024-05-08 12:08:47');
+(14, 'test', '2024-05-13', '00:00:00', 1, '2024-05-12 09:52:29'),
+(15, 'test2', '2024-05-14', '00:00:00', 1, '2024-05-13 15:37:43'),
+(16, 'test2', '2024-05-14', '22:38:00', 1, '2024-05-13 15:37:53'),
+(17, 'test2', '2024-05-14', '22:38:00', 1, '2024-05-13 15:37:54');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `tasks`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

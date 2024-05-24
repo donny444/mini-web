@@ -14,13 +14,19 @@ app.post("/add", async (req, res) => {
                 res.send(`<p>Internal Server Error</p>`);
             } else {
                 res.send(`
-                    <div class="task" id="${results.insertId}">
+                    <div class="task" id="${results.insertedId}">
                         <div>
                             <h3 class="task-name">${name}</h3>
-                            <span class="task-date">${date}</span><span class="task-time">${time}</span><span class="task-priority">P${priority}</span>
+                            <span class="task-date">
+                                ${new Date(date).getDate()}/${new Date(date).getMonth()+1}/${new Date(date).getFullYear()}
+                            </span><span class="task-time">${time}</span><span class="task-priority-${priority}">P${priority}</span>
                         </div>
-                        <button class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${results.insertId}}'>ลบ</button>
-                    <div>
+                        <svg class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${results.insertedId}}'
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"
+                        >
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
+                    </div>
                 `)
             }
         });
@@ -57,9 +63,15 @@ app.get("/tasks", async (req, res) => {
                     <div class="task" id="${task.id}">
                         <div>
                             <h3 class="task-name">${task.name}</h3>
-                            <span class="task-date">${task.date}</span><span class="task-time">${task.time}</span><span class="task-priority">P${task.priority}</span>
+                            <span class="task-date">
+                                ${new Date(task.date).getDate()}/${new Date(task.date).getMonth()+1}/${new Date(task.date).getFullYear()}
+                            </span><span class="task-time">${task.time}</span><span class="task-priority-${task.priority}">P${task.priority}</span>
                         </div>
-                        <button class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${task.id}}'>ลบ</button>
+                        <svg class="delete-task" hx-delete="/delete" hx-target="closest .task" hx-swap="outerHTML" hx-vals='js:{"id": ${task.id}}'
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"
+                        >
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                        </svg>
                     </div>
                 `).join("");
 
