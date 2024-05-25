@@ -37,6 +37,9 @@
 
         if($result->num_rows > 0)
         {
+
+            echo "<div class='candidates'>";
+
             while($row = $result->fetch_assoc())
             {
                 echo "
@@ -49,7 +52,11 @@
                     </div>
                 ";
             }
+
+            echo "</div>";
+
         }
+
         else
         {
             echo "0 results";
