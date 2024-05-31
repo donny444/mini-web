@@ -2,6 +2,24 @@ const connection = require("./database.js");
 const express = require("express");
 const app = express();
 
+
+app.get("/form", async (req, res) => {
+    res.send(`
+        <form class="task-form" hx-post="/add" hx-target="#tasks-list" hx-swap="afterbegin">
+            <input class="task-input-name" type="text" name="name" placeholder="Add some task here" maxlength="30" required>
+            <input class="task-input-date" type="date" name="date">
+            <input class="task-input-time" type="time" name="time">
+            <select class="task-input-priority" name="priority" required>
+                <option value="1">P1</option>
+                <option value="2">P2</option>
+                <option value="3">P3</option>
+                <option value="4">P4</option>
+            </select>
+            <input class="add-task" type="submit" value="Add">
+        </form>
+    `)
+})
+// Add task to the database and return the task HTML
 app.post("/add", async (req, res) => {
     const name = req.body.name;
     const date = req.body.date;
@@ -35,6 +53,7 @@ app.post("/add", async (req, res) => {
     }
 })
 
+// Delete task from the database and clear the task HTML
 app.delete("/delete", async (req, res) => {
     const id = req.body.id;
 
@@ -53,6 +72,7 @@ app.delete("/delete", async (req, res) => {
     }
 })
 
+// Get all tasks from the database and return the tasks HTML
 app.get("/tasks", async (req, res) => {
     try {
         connection.query('SELECT * FROM tasks ORDER BY priority ASC', async (error, results) => {
