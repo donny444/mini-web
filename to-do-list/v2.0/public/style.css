@@ -1,0 +1,127 @@
+body {
+  font-family: 'Sarabun', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  background-color: rgb(209, 69, 59);
+  color: rgb(255, 255, 255);
+}
+
+.task-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input-name,
+.task-input-date,
+.task-input-time,
+.task-input-priority {
+  padding: 8px;
+  border: 2px solid rgb(209, 69, 59);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.task-input-priority {
+  font-weight: bold;
+}
+
+.add-task {
+  padding: 8px 16px;
+  background-color: rgb(209, 69, 59);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 500px;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-name {
+  margin: 12px 0;
+}
+
+.task .task-date,
+.task .task-time {
+  margin-right: 10px;
+}
+
+.task-priority-1 {
+  background-color: rgb(250, 236, 235);
+  color: rgb(209, 69, 59);;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.task-priority-2 {
+  background-color: rgb(253, 243, 230);
+  color: rgb(235, 137, 9);
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.task-priority-3 {
+  background-color: rgb(233, 240, 252);
+  color: rgb(36, 111, 224);
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.task-priority-4 {
+  background-color: rgb(255, 255, 255);
+  color: rgb(112, 112, 112);
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.delete-task {
+  justify-content: flex-start;
+}
+
+.delete-task:hover {
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  .task-form {
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .task {
+    width: 90%;
+  }
+}

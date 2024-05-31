@@ -67,3 +67,179 @@ footer {
 footer span {
     color: lightskyblue;
 }
+
+.parties {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.party {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    background-color: lightgrey;
+    border: 10px solid lightgrey;
+    border-radius: 6px;
+    margin: 10px auto;
+    width: 80%;
+    min-width: 500px;
+    max-width: 768px;
+}
+
+.party-left {
+    display: flex;
+    gap: 15px;
+    width: 400px;
+}
+
+.party-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.party-image {
+    width: 100px;
+}
+
+.party-number {
+    margin: 0;
+    width: 100px;
+    font-size: 64px;
+    text-align: center;
+}
+
+.policies {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px 30px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 768px;
+}
+
+.policy {
+    background-color: lightgrey;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 20px solid lightgrey
+}
+
+.policy-image {
+    width: 100%;
+    
+}
+
+.candidates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate {
+    display: flex;
+    gap: 15px;
+    background-color: lightgrey;
+    width: 80%;
+    max-width: 768px;
+    margin: 10px auto;
+    border: 10px solid lightgrey;
+    border-radius: 6px;
+}
+
+.candidate-image {
+    height: 100px
+}
+
+.home-icon {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+    fill: black;
+}
+
+.buttons-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap: 35px;
+    
+}
+
+.button {
+    text-align: center;
+    align-content: center;
+    width: 200px;
+    height: 70px;
+    background-color: purple;
+    border: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 426px) {
+    .party {
+        width: 90%;
+    }
+    .party-left {
+        gap: 7.5px;
+        height: 75px;
+    }
+
+    .party-image {
+        width: 75px;
+        height: 75px;
+    }
+
+    .party-text {
+        height: 75px
+    }
+
+    .party-name {
+        margin: 8px 0;
+    }
+
+    .party-candidate {
+        margin: 8px 0;
+    }
+
+    .party-right {
+        width: 75px;
+        height: 75px;
+    }
+
+    .party-number {
+        font-size: 48px;
+    }
+    
+    .candidate {
+        margin: 5px auto;
+        width: 90%;
+        gap: 7.5px
+    }
+
+    .candidate-image {
+        height: 75px;
+    }
+
+    .candidate-text {
+        height: 75px;
+    }
+
+    .candidate-name {
+        margin: 8px 0;
+    }
+
+    .candidate-party {
+        margin: 8px 0;
+    }
+}

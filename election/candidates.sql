@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2024 at 05:12 PM
+-- Generation Time: May 14, 2024 at 09:07 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -30,8 +30,26 @@ SET time_zone = "+00:00";
 CREATE TABLE `candidates` (
   `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
-  `party` int(11) NOT NULL
+  `party` int(11) DEFAULT NULL,
+  `file_name` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `candidates`
+--
+
+INSERT INTO `candidates` (`id`, `name`, `party`, `file_name`) VALUES
+(9, 'เสรีพิศุทธ์ เตมียเวส', 2, 'seri.webp'),
+(10, 'จุรินทร์ ลักษณวิศิษฏ์', 3, 'jurin.jpg'),
+(11, 'ประยุทธ์ จันทร์โอชา', 4, 'prayuth.jpg'),
+(12, 'เศรษฐา ทวีสิน', 5, 'shetta.webp'),
+(13, 'วรงค์ เดชกิจวิกรม', 6, 'warong.webp'),
+(14, 'พิธา ลิ้มเจริญรัตน์', 7, 'pita.jpg'),
+(15, 'วราวุธ ศิลปอาชา', 8, 'warawuth.jpg'),
+(16, 'สุดารัตน์ เกยุราพันธุ์', 9, 'sudarat.jpg'),
+(17, 'กรณ์ จาติกวณิช', 10, 'korn.jpg'),
+(18, 'ประวิตร วงษ์สุวรรณ', 11, 'prawit.jpg'),
+(19, 'อนุทิน ชาญวีรกูล', 22, 'anutin.jpg');
 
 --
 -- Indexes for dumped tables
@@ -52,7 +70,7 @@ ALTER TABLE `candidates`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

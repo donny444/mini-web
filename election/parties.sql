@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2024 at 05:13 PM
+-- Generation Time: May 25, 2024 at 06:19 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -31,8 +31,26 @@ CREATE TABLE `parties` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `candidate` int(11) DEFAULT NULL,
-  `file_name` varchar(20) DEFAULT NULL
+  `file_name` varchar(20) NOT NULL,
+  `number` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `parties`
+--
+
+INSERT INTO `parties` (`id`, `name`, `candidate`, `file_name`, `number`) VALUES
+(2, 'เสรีรวมไทย', 9, 'เสรีรวมไทย.jpg', 25),
+(3, 'ประชาธิปัตย์', 10, 'ประชาธิปัตย์.jpg', 26),
+(4, 'รวมไทยสร้างชาติ', 11, 'รวมไทยสร้างชาติ.jpg', 22),
+(5, 'เพื่อไทย', 12, 'เพื่อไทย.jpg', 29),
+(6, 'ไทยภักดี', 13, 'ไทยภักดี.jpg', 21),
+(7, 'ก้าวไกล', 14, 'ก้าวไกล.jpg', 31),
+(8, 'ชาติไทยพัฒนา', 15, 'ชาติไทยพัฒนากล้า.jpg', 18),
+(9, 'ไทยสร้างไทย', 16, 'ไทยสร้างไทย.jpg', 32),
+(10, 'ชาติพัฒนากล้า', 17, 'ชาติพัฒนากล้า.jpg', 14),
+(11, 'พลังประชารัฐ', 18, 'พลังประชารัฐ.jpg', 37),
+(22, 'ภูมิใจไทย', 19, 'ภูมิใจไทย.jpg', 7);
 
 --
 -- Indexes for dumped tables
@@ -53,7 +71,7 @@ ALTER TABLE `parties`
 -- AUTO_INCREMENT for table `parties`
 --
 ALTER TABLE `parties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables

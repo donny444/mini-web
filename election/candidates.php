@@ -32,16 +32,19 @@
             die("Connection failed: " . $conn -> connect_error);
         }
 
-        $sql = "SELECT name, party FROM candidates";
+        $sql = "SELECT candidates.name, parties.name AS party, candidates.file_name FROM candidates INNER JOIN parties ON candidates.party = parties.id";
         $result = $conn->query($sql);
 
         if($result->num_rows > 0)
         {
+
+            echo "<div class='candidates'>";
+
             while($row = $result->fetch_assoc())
             {
                 echo "
                     <div class='candidate'>
-                        <img class='candidate-image' src='assets/{$row['file_name']} alt='{$row['file_name']}'>
+                        <img class='candidate-image' src='assets/candidates/{$row['file_name']}' alt='{$row['file_name']}'>
                         <div class='candidate-text'>
                             <h3 class='candidate-name'>{$row['name']}</h3>
                             <p class='candidate-party'>สังกัดพรรค: {$row['party']}</p>
@@ -49,7 +52,11 @@
                     </div>
                 ";
             }
+
+            echo "</div>";
+
         }
+
         else
         {
             echo "0 results";
