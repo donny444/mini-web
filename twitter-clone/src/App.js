@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/Sidebar/Sidebar';
 import Home from "./pages/Home";
 import Notifications from "./pages/Notifications";
 import Messages from "./pages/Messages";

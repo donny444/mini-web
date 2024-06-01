@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 import { Link } from 'react-router-dom';
-import Logo from "./Logo";
+import Logo from "../Logo/Logo";
 
 function Sidebar() {
     return (

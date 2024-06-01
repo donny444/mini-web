@@ -29,15 +29,16 @@ function Home() {
 
     return (
         <div>
-            <form onSubmit={postTweet}>
+            <form className="tweet-form" onSubmit={postTweet}>
                 <textarea
+                    className="tweet-input"
                     value={tweetContent}
                     onChange={(e) => setTweetContent(e.target.value)}
                     placeholder='What is happening?'
-                    rows="3"
-                    style={{ width: '100%', marginBottom: '10px' }}
+                    maxLength={280}
+                    required
                 ></textarea>
-                <button type='submit' style={{ padding: '10px 20px' }}>Tweet</button>
+                <button className="tweet-submit" type='submit' style={{ padding: '10px 20px' }}>Tweet</button>
             </form>
             {tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)}
         </div>
@@ -45,29 +46,22 @@ function Home() {
 }
 
 function Tweet({ tweet }) {
-    const [liked, setLiked] = useState(false);
-    const [retweeted, setRetweeted] = useState(false);
-
-    const toggleLike = () => {
-        setLiked(!liked);
-    }
-
-    const toggleRetweet = () => {
-        setRetweeted(!retweeted);
-    }
 
     return (
         <div className='tweet'>
-            <div>
-                <img src={tweet.user.avatar} alt={tweet.user.name} />
-                <h3>{tweet.user.name}</h3><span>{tweet.user.username}</span>
-                <p>{tweet.content}</p>
-                <img className='tweet-image' src={tweet.image} alt="" />
-                <p>{tweet.date}</p>
+            <div className='tweet-info'>
+                <img className='tweet-profile' src={tweet.user.avatar} alt={tweet.user.name} />
+                <div className='tweet-text'>
+                    <h3 className='tweet-name'>{tweet.user.name} <span className='tweet-username'>{tweet.user.username}</span> <span className='tweet-date'>{tweet.date}</span></h3>
+                    <p className='tweet-content'>{tweet.content}</p>
+                </div>
             </div>
-            <div>
-                <button onClick={toggleLike} style={{ color: liked ? 'red' : 'grey' }}>{liked ? 'Unlike' : 'Like'}</button>
-                <button onClick={toggleRetweet} style={{ color: retweeted ? 'green' : 'grey' }}>{retweeted ? 'Unretweet' : 'Retweet'}</button>
+            <img className='tweet-image' src={tweet.image} alt={tweet.image} />
+            <div className='tweet-reaction'>
+                <LikeIcon />
+                <RetweetIcon />
+                {/* <button onClick={toggleLike} style={{ color: liked ? 'red' : 'grey' }}>{liked ? 'Unlike' : 'Like'}</button> */}
+                {/* <button onClick={toggleRetweet} style={{ color: retweeted ? 'green' : 'grey' }}>{retweeted ? 'Unretweet' : 'Retweet'}</button> */}
             </div>
         </div>
     )
@@ -92,7 +86,7 @@ function Tweet({ tweet }) {
 //     )
 // }
 
-/*
+
 function LikeIcon() {
     const [liked, setLiked] = useState(false);
 
@@ -101,12 +95,11 @@ function LikeIcon() {
     }
 
     return (
-        <svg onClick={toggleLike} enable-background="new 0 0 32 32" height="512" viewBox="0 0 32 32" width="512" xmlns="http://www.w3.org/2000/svg"><g id="Layer_1"><path d="m27.8125 5.5842c-3.1411-3.1411-8.2339-3.1411-11.375 0l-.4375.4375-.4375-.4375c-3.1411-3.1411-8.2339-3.1411-11.375 0s-3.1411 8.2339 0 11.375l.4375.4375 11.375 11.375 11.375-11.375.4375-.4375c3.1411-3.1411 3.1411-8.2339 0-11.375z" fill={ liked ? "red" : "grey"} /></g></svg>
+        <svg onClick={toggleLike} enable-background="new 0 0 32 32" height="20" viewBox="0 0 32 32" width="20" xmlns="http://www.w3.org/2000/svg"><g id="Layer_1"><path d="m27.8125 5.5842c-3.1411-3.1411-8.2339-3.1411-11.375 0l-.4375.4375-.4375-.4375c-3.1411-3.1411-8.2339-3.1411-11.375 0s-3.1411 8.2339 0 11.375l.4375.4375 11.375 11.375 11.375-11.375.4375-.4375c3.1411-3.1411 3.1411-8.2339 0-11.375z" fill={ liked ? "red" : "grey"} /></g></svg>
     )
 }
-*/
 
-/*
+
 function RetweetIcon() {
     const [retweeted, setRetweeted] = useState(false);
 
@@ -117,8 +110,8 @@ function RetweetIcon() {
     return (
         <>
             <svg onClick={toggleRetweet} version="1.1" id="Capa_1" x="0px" y="0px"
-                width="548.172px" height="548.172px" viewBox="0 0 548.172 548.172" enable-background="new 0 0 548.172 548.172"
-                xml:space="preserve">
+                width="20" height="20" viewBox="0 0 548.172 548.172" enable-background="new 0 0 548.172 548.172"
+                >
                 <g>
                     <g>
                         <path d="M317.769,368.589c-1.712-2.094-4.09-3.142-7.132-3.142H146.181V255.81h54.814c4.948,0,9.233-1.809,12.847-5.426
@@ -171,6 +164,5 @@ function RetweetIcon() {
         </>
     )
 }
-*/
 
 export default Home;
