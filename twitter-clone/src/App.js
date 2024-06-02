@@ -4,11 +4,13 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Home from "./pages/Home";
 import Notifications from "./pages/Notifications";
 import Messages from "./pages/Messages";
+import { useTheme } from "./ThemeContext";
 
 function App() {
+  const { theme } = useTheme();
   return (
     <Router>
-      <div className="app">
+      <div className={`app ${theme}`}>
         <Sidebar />
         <div className="content">
           <Routes>

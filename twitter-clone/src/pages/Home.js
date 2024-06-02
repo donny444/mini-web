@@ -4,7 +4,7 @@ import tweetsData from '../data/tweets';
 function Home() {
     const [tweets, setTweets] = useState([]);
     const [tweetContent, setTweetContent] = useState('');
-    const [tweetImage, setTweetImage] = useState('https://source.unsplash.com/random/800x600');
+    // const [tweetImage, setTweetImage] = useState('https://source.unsplash.com/random/800x600');
 
     useEffect(() => {
         setTweets(tweetsData);
@@ -20,7 +20,7 @@ function Home() {
                 avatar: 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
             },
             content: tweetContent,
-            image: tweetImage,
+            image: null,
             date: new Date().toISOString(),
         };
         setTweets([newTweet, ...tweets]);
@@ -56,7 +56,7 @@ function Tweet({ tweet }) {
                     <p className='tweet-content'>{tweet.content}</p>
                 </div>
             </div>
-            <img className='tweet-image' src={tweet.image} alt={tweet.image} />
+            {tweet.image ? (<img className='tweet-image' src={tweet.image} alt={tweet.image} />) : (<></>)}
             <div className='tweet-reaction'>
                 <LikeIcon />
                 <RetweetIcon />

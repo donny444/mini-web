@@ -18,7 +18,7 @@ const tweetsData = [
             avatar: 'https://www.gravatar.com/avatar/0d9e7f7c0b6f2d9b6b7d7b6f7b6d7b6f',
         },
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        image: 'https://source.unsplash.com/random/800x600',
+        image: null,
         date: new Date().toISOString(),
     },
     {
@@ -29,7 +29,7 @@ const tweetsData = [
             avatar: 'https://www.gravatar.com/avatar/0d9e7f7c0b6f2d9b6b7d7b6f7b6d7b6f',
         },
         content: 'Grove Street Families.',
-        image: 'https://source.unsplash.com/random/800x600',
+        image: 'https://images.unsplash.com/photo-1706965241476-6f741676033e',
         date: new Date().toISOString(),
     }
 ];
