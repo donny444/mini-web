@@ -7,18 +7,20 @@ function Sidebar() {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className="sidebar">
-            <Logo />
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/notifications">Notifications</Link>
-                </li>
-                <li>
-                    <Link to="/messages">Messages</Link>
-                </li>
-            </ul>
+            <div>
+                <Logo />
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/notifications">Notifications</Link>
+                    </li>
+                    <li>
+                        <Link to="/messages">Messages</Link>
+                    </li>
+                </ul>
+            </div>
             <button onClick={toggleTheme}>
                 {theme === 'light' ? <DarkIcon /> : <LightIcon />}
             </button>

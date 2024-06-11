@@ -4,6 +4,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Home from "./pages/Home";
 import Notifications from "./pages/Notifications";
 import Messages from "./pages/Messages";
+import NotFound from "./pages/NotFound";
 import { useTheme } from "./ThemeContext";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/messages" element={<Messages />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
