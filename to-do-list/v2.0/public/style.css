@@ -1,7 +1,12 @@
-body {
+* {
   font-family: 'Sarabun', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
   background-color: #f8f8f8;
   color: #333;
+  margin: 0;
 }
 
 h1 {
@@ -9,13 +14,24 @@ h1 {
   text-align: center;
   background-color: rgb(209, 69, 59);
   color: rgb(255, 255, 255);
+  padding: 10px 0;
+  margin: 0;
+}
+
+#form-button {
+  background-color: rgb(209, 69, 59);
+  color: #f8f8f8;
+  border-radius: 6px;
+  padding: 8px 16px;
+  border: 0;
+  margin: 10px auto;
 }
 
 .task-form {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .task-input-name,
@@ -45,7 +61,7 @@ h1 {
 #tasks-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   margin: 10px 0;
 }
 
@@ -57,7 +73,6 @@ h1 {
   background-color: rgb(255, 255, 255);
   padding: 10px;
   margin: 0 auto;
-  margin-bottom: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -105,9 +120,13 @@ h1 {
 
 .delete-task {
   justify-content: flex-start;
+  fill: #333;
 }
 
 .delete-task:hover {
+  fill: #f8f8f8;
+  background-color: rgb(209, 69, 59);
+  border-radius: 7px;
 }
 
 @media (max-width: 767px) {
