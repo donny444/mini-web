@@ -19,13 +19,11 @@ button:focus {
 .light {
   background-color: white;
   color: black;
-  border: 1px solid #CCCCCC;
 }
 
 .dark {
   background-color: #333333;
   color: white;
-  border: 1px solid red;
 }
 
 .content {

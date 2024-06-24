@@ -2,12 +2,22 @@
   font-family: 'Ubuntu';
   display: flex;
   flex-direction: column;
-  border: 1px solid #CCCCCC;
   padding: 10px;
 }
 
-.tweet:hover {
-  background-color: #F7F7F7;
+.tweet-light,
+.tweet-dark {
+  transition: background-color 0.3s ease;
+}
+
+.tweet-light {
+  background-color: white;
+  border: 1px solid #CCCCCC;
+}
+
+.tweet-dark {
+  background-color: #333333;
+  border: 1px solid red;
 }
 
 .tweet-info {
@@ -45,7 +55,7 @@
 .tweet-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .tweet-content {
@@ -65,6 +75,7 @@
 }
 
 .tweet-input {
+  background-color: inherit;
   color: grey;
   font-family: 'Arial';
   font-size: 1.4rem;
@@ -89,12 +100,4 @@
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-.tweet .light {
-  border-color: #CCCCCC
-}
-
-.tweet .dark {
-  border-color: red;
 }
