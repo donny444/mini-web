@@ -1,11 +1,13 @@
+import '../components/Tweet/Tweet.css';
 import { useState, useEffect } from 'react';
 import tweetsData from '../data/tweets';
 import Tweet from '../components/Tweet/Tweet';
+import { useTheme } from '../ThemeContext'
 
 export default function Home() {
     const [tweets, setTweets] = useState([]);
     const [tweetContent, setTweetContent] = useState('');
-    // const [tweetImage, setTweetImage] = useState('https://source.unsplash.com/random/800x600');
+    const { theme } = useTheme();
 
     useEffect(() => {
         setTweets(tweetsData);
@@ -30,7 +32,7 @@ export default function Home() {
 
     return (
         <div>
-            <form className="tweet-form" onSubmit={postTweet}>
+            <form className={`tweet-form tweet-${theme}`} onSubmit={postTweet}>
                 <textarea
                     className="tweet-input"
                     value={tweetContent}

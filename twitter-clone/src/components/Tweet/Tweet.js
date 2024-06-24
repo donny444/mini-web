@@ -1,14 +1,13 @@
-import '../../App.css'
 import './Tweet.css'
 import { useTheme } from '../../ThemeContext'
 import LikeIcon from '../Icon/LikeIcon';
 import RetweetIcon from '../Icon/RetweetIcon';
 
 export default function Tweet({ tweet }) {
-    const theme = useTheme();
+    const { theme } = useTheme();
 
     return (
-        <div className={`tweet ${theme}`}>
+        <div className={`tweet tweet-${theme}`}>
             <div className='tweet-info'>
                 <img className='tweet-profile' src={tweet.user.avatar} alt={tweet.user.name} />
                 <div className='tweet-text'>
